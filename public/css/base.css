@@ -1,0 +1,34 @@
+:root{
+    --main-color: #F3455A ;
+    --title-color:#333333;
+    --text-color:#848484;
+    --background-color:#EDF2F4;
+    --font-poppin: "Poppins", sans-serif;
+    --font-nunito: "Nunito", sans-serif;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wraper{
+    max-width: 1440px;
+    margin: 20px auto;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;;
+}
