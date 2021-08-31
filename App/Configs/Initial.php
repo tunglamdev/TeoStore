@@ -24,6 +24,8 @@
     defined("URL_ICON") ?: define("URL_ICON", URL_PUBLIC. "/icon");
     defined("URL_JS") ?: define("URL_JS", URL_PUBLIC. "/js");
     defined("URL_IMG") ?: define("URL_IMG", URL_PUBLIC. "/img");
+    defined("URL_BOOTSTRAP") ?: define("URL_BOOTSTRAP", URL_PUBLIC. "/bootstrap");
+    defined("URL_FONT") ?: define("URL_FONT", URL_PUBLIC. "/font");
 
     require_once CORE.DS."App.php";
     require_once CORE.DS."Controller.php";

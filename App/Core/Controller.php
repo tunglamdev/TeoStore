@@ -26,8 +26,8 @@
 
             }
             else{
-                if(file_exists(VIEW . DS . $view . ".php")){
-                    require_once VIEW . DS . "shared/layout.php";
+                if(file_exists(VIEW . DS . "client".DS.$view . ".php")){
+                    require_once VIEW . DS . "client/shared/layout.php";
                 }
                 else{
                     echo "Not found view: ".$view;
