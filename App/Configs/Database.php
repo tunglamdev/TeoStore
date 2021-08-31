@@ -4,7 +4,7 @@
             "servername" => "localhost",
             "username" => "root",
             "password" => "",
-            "databasename" => "vegatables"
+            "databasename" => "vegetables"
         ]
 
 ?>
