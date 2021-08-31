@@ -1,9 +1,9 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    transition: all 0.2s;
-    font-family: "Poppins", sans-serif;
+    margin:0;
+    padding:0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    transition: all ease-in-out 0.5s;
 }
 
 a{
@@ -13,6 +13,14 @@ a{
 
 ul li{
     list-style-type: none;
+}
+
+.wrapper{
+    width: 100%;
+}
+
+.shadow{
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.13);
 }
 
 button{
