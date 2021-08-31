@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?= URL_FONT ?>/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= URL_BOOTSTRAP ?>/css/bootstrap.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/base.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
+    <link rel="stylesheet" href="<?= URL_CSS ?>/header.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/reset.css">
 </head>
 <body>
