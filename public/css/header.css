@@ -170,7 +170,7 @@ header.sticky a{
     bottom: 0;
     width: 320px;
     background-color: #fff!important;
-    z-index: 999;
+    z-index: 1030;
     transform: translateX(100%);
     opacity: 0;
     transition: transform linear 0.2s, opacity linear 0.2s;

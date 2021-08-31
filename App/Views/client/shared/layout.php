@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="<?= URL_FONT ?>/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= URL_BOOTSTRAP ?>/css/bootstrap.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/base.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/header.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/reset.css">
+    <link rel="stylesheet" href="<?= URL_CSS ?>/header.css">
+    <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
 </head>
 <body>
     <!-- Header -->
@@ -22,7 +23,10 @@
     <?php require_once VIEW."/client/shared/footer.php" ?>
     
     <!-- JQuery -->
-    <script src="<?= URL_JS ?>/jquery.js"></script>
+    <script src="<?= URL_JS ?>/jquery-3.6.0.min.js"></script>
+
+    <!-- Javascript for Bootstrap -->
+    <script src="<?= URL_BOOTSTRAP ?>/js/bootstrap.min.js"></script>
 
     <!-- JS menu bar -->
     <script>

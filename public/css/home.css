@@ -1,0 +1,54 @@
+/* -------CSS for Slider------- */
+.slide-title{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    color: var(--blue);
+}
+
+.slide-price{
+    font-weight: bold;
+    font-size: 48px;
+    color: var(--green);
+}
+
+.slide-content{
+    font-style: italic;
+    font-size: 20px;
+    text-align: justify;
+    color: #666666;
+}
+
+@media only screen and (max-width: 739px){
+    .slide-title{
+        font-size: 32px;
+        
+    }
+
+    .slide-price{
+        font-size: 28px;
+    }
+
+    .slide-content{
+        font-size: 14px;
+    }
+
+    .slideshow{
+        align-items: center!important;
+    }
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+    .slide-title{
+        font-size: 36px;
+        
+    }
+
+    .slide-price{
+        font-size: 30px;
+    }
+
+    .slide-content{
+        font-size: 16px;
+    }
+}

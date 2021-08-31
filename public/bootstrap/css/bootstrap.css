@@ -5922,7 +5922,7 @@ textarea.form-control-lg {
 }
 
 .carousel {
-  position: relative;
+  /* position: relative; */
 }
 
 .carousel.pointer-event {
@@ -5930,7 +5930,7 @@ textarea.form-control-lg {
 }
 
 .carousel-inner {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   overflow: hidden;
 }
@@ -5941,7 +5941,7 @@ textarea.form-control-lg {
 }
 
 .carousel-item {
-  position: relative;
+  /* position: relative; */
   display: none;
   float: left;
   width: 100%;
