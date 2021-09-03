@@ -1,6 +1,6 @@
 <!-- Header -->
     <header>
-        <div id="wrapper" class="wrapper z-100 position-fixed top-0">
+        <div id="wrapper" class="wrapper position-fixed top-0">
             <div class="container mt-1 mb-2">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div id="header-logo" class="col-xl-3 col-md-4">

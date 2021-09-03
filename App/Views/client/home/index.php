@@ -54,4 +54,62 @@
     </div>
 <!-- End slider -->
 
+<!-- Categories -->
+    <div class="wrapper pt-3" style="background-color: var(--body)!important;">
+        <div class="container d-flex flex-column align-items-center">
+            <h3 class="sub-title">Sản Phẩm</h2>
+            <h2 class="title">CÁC LOẠI SẢN PHẨM CỦA TÈO</h2>
+            <div class="cate-content container categories">
+                <a href="#">
+                    <div class="cate-item">
+                        <img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt="">
+                        <h5 class="item-name">Rau</h5>
+                        <p class="item-des">Các loại rau tươi</p>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="cate-item">
+                        <img class="item-img" src="<?= URL_IMG ?>/categories/2.jpg" alt="">
+                        <h5 class="item-name">Củ</h5>
+                        <p class="item-des">Các loại củ tươi</p>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="cate-item">
+                        <img class="item-img" src="<?= URL_IMG ?>/categories/3.jpg" alt="">
+                        <h5 class="item-name">Quả</h5>
+                        <p class="item-des">Các loại quả tươi</p>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="cate-item">
+                        <img class="item-img" src="<?= URL_IMG ?>/categories/4.jpg" alt="">
+                        <h5 class="item-name">Nấm</h5>
+                        <p class="item-des">Các loại nấm tươi</p>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="cate-item">
+                        <img class="item-img" src="<?= URL_IMG ?>/categories/6.jpg" alt="">
+                        <h5 class="item-name">Hạt</h5>
+                        <p class="item-des">Các loại hạt khô</p>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="cate-item">
+                        <img class="item-img" src="<?= URL_IMG ?>/categories/5.jpg" alt="">
+                        <h5 class="item-name">Bông</h5>
+                        <p class="item-des">Các loại bông tươi</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+<!-- End categories -->
+
 

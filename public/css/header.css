@@ -6,6 +6,7 @@
 
 #wrapper{
     background-color: transparent;
+    z-index: 1000!important;
 }
 
 .fa-shopping-cart, .fa-caret-down{
@@ -113,6 +114,7 @@ header ul#sub-nav{
 header.sticky #wrapper{
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 header.sticky .container{
@@ -218,6 +220,10 @@ header.sticky a{
     color: var(--green) !important;
 }
 
+header.sticky #wrapper{
+    z-index: 1000;
+}
+
 @keyframes fadeIn{
     from{
         opacity: 0;
@@ -231,6 +237,10 @@ header.sticky a{
 /* --------Responsive-------- */
 /* Tablet */
 @media only screen and (min-width: 740px) and (max-width: 1024px){
+    header.sticky #wrapper{
+        z-index: 1000;
+    }
+
     #header-menu, #header-cart, #menu-dropdown{
         display: none !important;
     }
