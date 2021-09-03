@@ -1,0 +1,45 @@
+/* -----guarantee----- */
+.guarantee{
+    position: relative;
+    width: 100%;
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: transparent;
+}
+
+.guarantee-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 120px;
+    justify-items: flex-start;
+}
+
+.content-item{
+    width: 350px
+}
+
+.guarantee-title{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.guarantee-des{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: justify;
+    color: #C4C4C4;
+}
+
+.slogan{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+}

@@ -112,4 +112,8 @@
     </div>
 <!-- End categories -->
 
+<!-- Guarranty -->
+<?php require_once VIEW."/client/shared/guarranty.php"; ?>
+<!-- End guarranty -->
+
 
