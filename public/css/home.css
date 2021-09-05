@@ -138,3 +138,23 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* --------------Menu------------- */
+.star-vote{
+    display: flex;
+    justify-content: center;
+}
+
+.price-button{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 20px 10px 20px;
+}
+
+.price{
+    color: var(--green); 
+    font-weight: 700; 
+    font-size:22px; 
+    margin-bottom:0
+}

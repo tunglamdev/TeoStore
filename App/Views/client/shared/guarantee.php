@@ -1,5 +1,6 @@
 <!-- guarantee -->
 <div class="wrapper guarantee">
+    <img src="<?= URL_ICON?>/camket1.jpg" alt=""  class="img-fluid">
     <div class="overlay container p-4 ps-5">
         <h3 class="sub-title" style="color: var(--green)">Cam Kết</h2>
         <h2 class="title" style="color: #fff">CAM KẾT CỦA NHÀ TÈO</h2>
@@ -19,5 +20,5 @@
             </div>
         </div>
     </div>
-    <img src="<?= URL_ICON?>/camket1.jpg" alt=""  class="img-fluid">
+    
 </div>
