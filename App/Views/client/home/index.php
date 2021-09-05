@@ -120,10 +120,10 @@
 <div class="wrapper pt-3" style="background-color: var(--body)!important;">
     <div class="container d-flex flex-column align-items-center">
         <h3 class="sub-title">Menu</h2>
-        <h2 class="title">CÁC LOẠI RAU HÔM NAY CỦA TÈO</h2>
+        <h2 class="title">RAU HÔM NAY TẠI NHÀ TÈO</h2>
         <div class="cate-content container categories">
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/1.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -133,13 +133,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/2.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -149,13 +149,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/3.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -165,13 +165,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/4.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -181,13 +181,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/5.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -197,13 +197,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/6.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -213,13 +213,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/7.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -229,13 +229,13 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
 
             <div class="cate-item">
-                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/categories/1.jpg" alt=""></a>
+                <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/8.jpg" alt=""></a>
                 <h5 class="item-name">Bí Xanh</h5>
                 <div class="star-vote mt-1">
                     <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
@@ -245,7 +245,7 @@
                     <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 </div>
                 <div class="price-button">
-                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0">20.000đ</p>
+                    <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px">20.000đ</p>
                     <a href="#" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</a>
                 </div>
             </div>
