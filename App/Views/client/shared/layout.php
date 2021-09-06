@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?= URL_CSS ?>/base.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/reset.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/header.css">
+    <link rel="stylesheet" href="<?= URL_CSS ?>/footer.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/guarantee.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
 </head>
