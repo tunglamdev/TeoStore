@@ -4734,10 +4734,10 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #0d6efd;
+  color: var(--bs-primary);
   text-decoration: none;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #fff;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4747,16 +4747,16 @@ textarea.form-control-lg {
 }
 .page-link:hover {
   z-index: 2;
-  color: #0a58ca;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+  color: #fff;
+  background-color: var(--bs-green);
+  border-color: var(--bs-green);
 }
 .page-link:focus {
   z-index: 3;
-  color: #0a58ca;
-  background-color: #e9ecef;
+  color: #fff;
+  background-color: var(--bs-green);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0px 0px 10px 2px rgba(39, 174, 96, 0.8);
 }
 
 .page-item:not(:first-child) .page-link {
@@ -4765,8 +4765,8 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: var(--bs-green);
+  border-color: var(--bs-green);
 }
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -4777,15 +4777,27 @@ textarea.form-control-lg {
 
 .page-link {
   padding: 0.375rem 0.75rem;
+  font-weight: 900;
 }
 
-.page-item:first-child .page-link {
+.page-item .page-link {
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
-.page-item:last-child .page-link {
+.page-item .page-link {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+}
+
+.page-item:first-child .page-link:active {
+  color: var(--bs-primary);
+  background-color: #fff;
+  border-color:#fff;
+}
+.page-item:last-child .page-link:active {
+  color: var(--bs-primary);
+  background-color: #fff;
+  border-color:#fff;
 }
 
 .pagination-lg .page-link {
@@ -5914,10 +5926,6 @@ textarea.form-control-lg {
 .popover-body {
   padding: 1rem 1rem;
   color: #212529;
-}
-
-.carousel {
-  /* position: relative; */
 }
 
 .carousel.pointer-event {

@@ -250,6 +250,15 @@
                 </div>
             </div>
         </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination mt-3">
+                <li class="page-item ps-1 pe-1"><a class="page-link" href=""><i class="fas fa-angle-double-left"></i></a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#">1</a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#">2</a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href="#">3</a></li>
+                <li class="page-item ps-1 pe-1"><a class="page-link" href=""><i class="fas fa-angle-double-right"></i></a></li>
+            </ul>
+        </nav>
     </div>
 </div>
 <!-- End menu -->
