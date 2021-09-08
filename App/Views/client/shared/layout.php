@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= URL_CSS ?>/footer.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/guarantee.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
+    <link rel="stylesheet" href="<?= URL_CSS ?>/about.css">
 </head>
 <body>
     <!-- Header -->

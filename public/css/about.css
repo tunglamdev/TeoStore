@@ -1,0 +1,166 @@
+/* ------- CSS for About------- */
+.about{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img.about-logo{
+    width: 380px;
+    margin-left: 25px;
+}
+
+.about-content{
+    width: 600px;
+    margin-right: 25px;
+}
+
+.about-content-title{
+    font-weight: bold;
+    font-size: 36px;
+    color: #192A56;
+}
+
+.about-content p{
+    font-style: italic;
+    font-size: 22px;
+    text-align: justify;
+}
+
+/* Mobile */
+@media only screen and (max-width: 739px){
+    .about{
+        flex-direction: column;
+    }
+
+    img.about-logo{
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .about-content{
+        width: 100%;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-content-title{
+        font-size: 28px;
+    }
+    
+    .about-content p{
+        font-size: 16px;
+    }
+
+    .about-content a.btn{
+        font-size: 16px!important;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 739px) and (max-width: 1024px){
+    img.about-logo{
+        width: 50%;
+        padding-right: 5px;
+        margin-left: 0;
+    }
+    
+    .about-content{
+        width: 50%;
+        padding-left: 5px;
+        margin-right: 0;
+    }
+
+    .about-content-title{
+        font-size: 28px;
+    }
+    
+    .about-content p{
+        font-size: 16px;
+    }
+
+    .about-content a{
+        font-size: 16px;
+    }
+}
+
+/* ----- CSS for 4K vegetables ----- */
+.organic{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.vege-4k{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.vege-4k img{
+    width: 150px;
+    border-radius: 100%;
+}
+
+.title-4k{
+    font-weight: bold;
+    font-size: 20px;
+    color: #27AE60;
+    margin-bottom: 10px;
+}
+
+.content-4k{
+    font-size: 16px;
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 739px){
+    .organic{
+        grid-template-columns: 1fr;
+    }
+
+    .vege-4k{
+        flex-direction: column;
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+
+    .vege-4k-mobile{
+        flex-direction: column-reverse;
+    }
+
+    .vege-4k img{
+        margin: 0!important;
+    }
+
+    .title-4k, .content-4k{
+        text-align: center;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 739px) and (max-width: 1024px){
+    .organic{
+        grid-template-columns: 1fr;
+    }
+
+    .vege-4k{
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+
+    .vege-4k-mobile{
+        flex-direction: row-reverse;
+    }
+
+    .vege-4k-mobile img{
+        margin-left: 0!important;
+        margin-right: 10px;
+    }
+}

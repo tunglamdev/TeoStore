@@ -262,7 +262,3 @@
     </div>
 </div>
 <!-- End menu -->
-
-<!-- Footer -->
-<?php require_once VIEW."/client/shared/footer.php"; ?>
-<!-- End footer -->

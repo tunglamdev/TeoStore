@@ -40,12 +40,13 @@
             }
             else{
                 //Xu ly Controller in Client
-                if(file_exists(CONT.DS.ucfirst($arr[0])."Controller.php")){
+                if(file_exists(CONT.DS."client".DS.ucfirst($arr[0])."Controller.php")){
                     $this->controller = ucfirst($arr[0]);
                     unset($arr[0]);
                 }
+                
                 $this->controller = $this->controller."Controller";
-                require_once CONT.DS.$this->controller.".php";
+                require_once CONT.DS."client".DS.$this->controller.".php";
                 $this->controller = new $this->controller;
     
                 //Xu ly Action in Client

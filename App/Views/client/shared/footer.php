@@ -1,5 +1,5 @@
 <!-- Footer -->
-<div class="wrapper bg-white">
+<div class="wrapper bg-white pt-3">
     <div class="container">
         <div class="footer">
             <div class="footer-intro">
