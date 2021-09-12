@@ -2,10 +2,10 @@
 
     use App\Core\Database;
 
-    class CakeTypeModel extends Database{
+    class CategoriesModel extends Database{
 
         function all(){
-            $sql = "SELECT * FROM cake_types";
+            $sql = "SELECT * FROM veg_types";
             $result = $this->conn->query($sql);
 
             if($result->num_rows >0){

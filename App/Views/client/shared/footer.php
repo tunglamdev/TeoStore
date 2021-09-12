@@ -18,18 +18,19 @@
 
                 <div class="footer-nav-content">
                     <h3 class="footer-nav-title">DANH MỤC</h3>
-                    <p class="footer-nav-link"><a href="#">Trang chủ</a></p>
-                    <p class="footer-nav-link"><a href="#">Sản phẩm</a></p>
-                    <p class="footer-nav-link"><a href="#">Giới thiệu</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT ?>/home">Trang chủ</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT ?>/products">Sản phẩm</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT ?>/about">Giới thiệu</a></p>
                 </div>
 
                 <div class="footer-nav-content">
                     <h3 class="footer-nav-title">SẢN PHẨM</h3>
-                    <p class="footer-nav-link"><a href="#">Rau</a></p>
-                    <p class="footer-nav-link"><a href="#">Củ</a></p>
-                    <p class="footer-nav-link"><a href="#">Quả</a></p>
-                    <p class="footer-nav-link"><a href="#">Quả</a></p>
-                    <p class="footer-nav-link"><a href="#">Hạt</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT?>/products/categories?id=1&page=1">Rau</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT?>/products/categories?id=2&page=1">Củ</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT?>/products/categories?id=3&page=1">Quả</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT?>/products/categories?id=4&page=1">Nấm</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT?>/products/categories?id=5&page=1">Bông</a></p>
+                    <p class="footer-nav-link"><a href="<?= DOCUMENT_ROOT?>/products/categories?id=6&page=1">Hạt</a></p>
                 </div>
             </div>
         </div>

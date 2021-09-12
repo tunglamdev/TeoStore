@@ -44,6 +44,7 @@
                     $this->controller = ucfirst($arr[0]);
                     unset($arr[0]);
                 }
+                $GLOBALS["currentPage"] = $this->controller;
                 
                 $this->controller = $this->controller."Controller";
                 require_once CONT.DS."client".DS.$this->controller.".php";

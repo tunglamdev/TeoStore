@@ -4,13 +4,13 @@
             <div class="container mt-1 mb-2">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div id="header-logo" class="col-xl-3 col-md-4">
-                        <a href=""><img class="w-75" src="<?= URL_ICON ?>/logo.png" alt="Logo"></a>
+                        <a href="<?= DOCUMENT_ROOT ?>/about"><img class="w-75" src="<?= URL_ICON ?>/logo.png" alt="Logo"></a>
                     </div>
                     <div id="header-menu" class="col-xl-4 col-xs-0 col-md-0">
                         <nav class="nav nav-pills flex-column flex-sm-row">
-                            <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Trang chủ</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Sản phẩm</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="#">Giới thiệu</a>
+                            <a class="flex-sm-fill text-sm-center nav-link <?= $GLOBALS['currentPage']=='Home' ? 'active': '' ?>" href="<?= DOCUMENT_ROOT ?>/home">Trang chủ</a>
+                            <a class="flex-sm-fill text-sm-center nav-link <?= $GLOBALS['currentPage']=='Products' ? 'active': '' ?>" href="<?= DOCUMENT_ROOT ?>/products">Sản phẩm</a>
+                            <a class="flex-sm-fill text-sm-center nav-link <?= $GLOBALS['currentPage']=='About' ? 'active': '' ?>" href="<?= DOCUMENT_ROOT ?>/about">Giới thiệu</a>
                         </nav>
                     </div>
                     <div id="header-search" class="col-xl-3 col-md-7">
