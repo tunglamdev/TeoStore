@@ -106,5 +106,23 @@
                 return false;
             }
         }
+
+        //Search vegetables by key
+        function getByKey($key){
+            $key = "%".$key."%";
+            $stmt = $this->conn->prepare("SELECT * FROM vegetables WHERE name LIKE ?");
+            $stmt->bind_param("s", $key);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                $veges = $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                $veges =[];
+            }
+
+            return $veges;
+        }
     }
 ?>

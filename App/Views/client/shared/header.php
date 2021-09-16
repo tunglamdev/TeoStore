@@ -14,11 +14,11 @@
                         </nav>
                     </div>
                     <div id="header-search" class="col-xl-3 col-md-7">
-                        <form action="">
-                            <div class="form-text">
-                                <input type="text" name="search" placeholder="Tìm kiếm...">
-                            </div>
-                        </form>
+                        <div class="form-text">
+                            <form action="<?= DOCUMENT_ROOT?>/products/search" method="get">
+                                <input type="text" placeholder="Tìm kiếm..." name="key" id="search">
+                            </form>
+                        </div>
                     </div>
     
                     <div class="col-xl-2 col-md-0 d-flex justify-content-end d-none">

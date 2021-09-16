@@ -78,5 +78,20 @@ use App\Core\Controller;
             $data["id_cate"] = $idCate; 
             $this->view("products/categories", $data);
         }
+
+        //Search cakes by key
+        function search(){
+            //Get all of categories
+            $data["cate"] = $this->cateModel->all();
+            
+            $key = $_GET["key"];
+            $veges = $this->vegeModel->getByKey($key);
+            if(!$veges){
+                $veges=[];
+            }
+            $data["vege_to_show"] = $veges;
+            $this->view("products/search", $data);
+        }
+
     }
 ?>
