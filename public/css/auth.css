@@ -1,0 +1,26 @@
+body {
+    background: #27AE60;
+    background: linear-gradient(to right, #26ca6b,#8fecb6 );
+}
+  
+.card-img-left {
+    width: 45%;
+    background: scroll center url('../icon/auth-img.jpg');
+    background-size: cover;
+}
+
+.btn-primary{
+    background-color: #192A56;
+    border-color: #192A56;
+}
+
+.btn-primary:hover{
+    background-color: #27AE60;
+    border-color: #27AE60;;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}

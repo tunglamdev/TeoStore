@@ -9,21 +9,28 @@
     <link rel="stylesheet" href="<?= URL_BOOTSTRAP ?>/css/bootstrap.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/base.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/reset.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/header.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/footer.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/guarantee.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
-    <link rel="stylesheet" href="<?= URL_CSS ?>/about.css">
+    <?php if ($GLOBALS['currentPage']!= "Accounts") : ?>
+        <link rel="stylesheet" href="<?= URL_CSS ?>/header.css">
+        <link rel="stylesheet" href="<?= URL_CSS ?>/footer.css">
+        <link rel="stylesheet" href="<?= URL_CSS ?>/guarantee.css">
+        <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
+        <link rel="stylesheet" href="<?= URL_CSS ?>/about.css">
+    <?php endif; ?>
+
+    <?php if ($GLOBALS['currentPage'] == "Accounts") : ?>
+        <link rel="stylesheet" href="<?= URL_CSS ?>/auth.css">
+    <?php endif; ?>
+    
 </head>
 <body>
     <!-- Header -->
-    <?php require_once VIEW."/client/shared/header.php" ?>
+    <?php $GLOBALS['currentPage']!= "Accounts" ? require_once VIEW."/client/shared/header.php" : ""?>
 
     <!-- Content -->
     <?php require_once VIEW."/client/".$view.".php" ?>
 
     <!-- Footer -->
-    <?php require_once VIEW."/client/shared/footer.php" ?>
+    <?php $GLOBALS['currentPage']!= "Accounts" ? require_once VIEW."/client/shared/footer.php" : ""?>
     
     <!-- JQuery -->
     <script src="<?= URL_JS ?>/jquery-3.6.0.min.js"></script>

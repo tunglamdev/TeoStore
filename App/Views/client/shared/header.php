@@ -20,21 +20,24 @@
                             </form>
                         </div>
                     </div>
-    
-                    <div class="col-xl-2 col-md-0 d-flex justify-content-end d-none">
-                        <a class="flex-sm-fill nav-link text-end" href="#">Đăng nhập</a>
-                    </div>
+                    <?php if(!isset($_SESSION["user"])) : ?>
+                        <div id="header-login" class="col-xl-2 col-md-0 d-flex justify-content-end">
+                            <a class="flex-sm-fill nav-link text-end" href="<?= DOCUMENT_ROOT ?>/accounts/login">Đăng nhập</a>
+                        </div>
+                    <?php else: ?>
 
-                    <div id="header-cart" class="col-xl-1 col-md-0 d-flex justify-content-end">
-                        <a href="" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                    <div id="menu-dropdown" class="col-xl-1 col-md-0 d-flex justify-content-end position-relative">
-                        <img id="avatar" class="rounded-circle dropdown-toggle" style="width: 50px" src="<?= URL_ICON ?>/avatar.jpeg" alt="avatar">
-                        <ul id="sub-nav" class="position-absolute top-100 end-0">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Cá nhân</a></li>                         
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>                     
-                        </ul>
-                    </div>
+                        <div id="header-cart" class="col-xl-1 col-md-0 d-flex justify-content-end">
+                            <a href="" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                        <div id="menu-dropdown" class="col-xl-1 col-md-0 d-flex justify-content-end position-relative">
+                            <img id="avatar" class="rounded-circle dropdown-toggle" style="width: 50px" src="<?= URL_ICON ?>/avatar.jpeg" alt="avatar">
+                            <ul id="sub-nav" class="position-absolute top-100 end-0">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Cá nhân</a></li>                         
+                                <li><a class="dropdown-item" href="<?= DOCUMENT_ROOT ?>/accounts/logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>                     
+                            </ul>
+                        </div>
+                    
+                    <?php endif; ?>
 
                     <div id="btn-menu-mobile" class="header__menu-mobile col-xs-2 col-md-1 d-flex justify-content-end">
                         <input type="checkbox" class="header__mobile-nav-btn" id="mobile-check">
@@ -50,11 +53,15 @@
                                 <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/home"><i class="fas fa-home me-2"></i>Trang chủ</a></li>
                                 <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/products"><i class="fas fa-seedling me-2"></i>Sản phẩm</a></li>
                                 <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/about"><i class="fas fa-address-card me-2"></i>Giới thiệu</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Cá nhân</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-cart-plus me-2"></i>Giỏ hàng</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-user-plus me-2"></i>Đăng ký</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-sign-in-alt me-2"></i>Đăng nhập</a></li>
-                                <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                                <?php if(!isset($_SESSION["user"])) : ?>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/register"><i class="fas fa-user-plus me-2"></i>Đăng ký</a></li>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/login"><i class="fas fa-sign-in-alt me-2"></i>Đăng nhập</a></li>
+                                <?php else: ?>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Cá nhân</a></li>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-cart-plus me-2"></i>Giỏ hàng</a></li>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                                <?php endif; ?>
+                               
                             </ul>
                         </div>
                     </div> 

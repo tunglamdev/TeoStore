@@ -241,7 +241,7 @@ header.sticky #wrapper{
         z-index: 1000;
     }
 
-    #header-menu, #header-cart, #menu-dropdown{
+    #header-login, #header-menu, #header-cart, #menu-dropdown{
         display: none !important;
     }
 
@@ -278,7 +278,7 @@ header.sticky #wrapper{
         width: 100% !important;
     }
 
-    #header-menu, #header-search, #header-cart, #menu-dropdown{
+    #header-login, #header-menu, #header-search, #header-cart, #menu-dropdown{
         display: none !important;
     }
 
