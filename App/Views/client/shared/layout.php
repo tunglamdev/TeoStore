@@ -23,6 +23,9 @@
     
 </head>
 <body>
+    <!-- Hidden tag to use AJAX -->
+    <p id="documentRootId" hidden><?= DOCUMENT_ROOT ?></p>
+
     <!-- Header -->
     <?php $GLOBALS['currentPage']!= "Accounts" ? require_once VIEW."/client/shared/header.php" : ""?>
 
@@ -32,6 +35,17 @@
     <!-- Footer -->
     <?php $GLOBALS['currentPage']!= "Accounts" ? require_once VIEW."/client/shared/footer.php" : ""?>
     
+    <!-- Toast messsage when adding vege to cart -->
+    <div id="toast-yes">
+        <div id="toast-yes-img" class="img"><i class="fas fa-thumbs-up"></i></div>
+        <div id="toast-yes-desc">A notification message..</div>
+    </div>
+
+    <div id="toast-no">
+        <div id="toast-no-img" class="img"><i class="fas fa-thumbs-down"></i></div>
+        <div id="toast-no-desc">A notification message..</div>
+    </div>
+
     <!-- JQuery -->
     <script src="<?= URL_JS ?>/jquery-3.6.0.min.js"></script>
 
@@ -51,5 +65,7 @@
             })
         });
     </script>
+
+    <script src="<?= URL_JS ?>/cart.js"></script>
 </body>
 </html>
