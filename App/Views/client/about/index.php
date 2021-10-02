@@ -12,7 +12,7 @@
         <div class="about-content mt-4">
             <h2 class="about-content-title">Xin chào! Mình tên là Tèo</h2>
             <p>“Rau Nhà Tèo” là cửa hàng chuyên cung cấp các loại sau sạch trên địa bàn Thành phố Cần Thơ. Rau được trồng theo mô hình nông nghiệp sạch với tiêu chí 4K, cam kết đem lại cho quý khách hàng những sản phẩm rau tươi an toàn cho sức khỏe. Hãy cùng trở thành những người tiêu dùng thông minh khi chọn sử dụng các sản phẩm Rau Nhà Tèo nhé!</p>
-            <a class="btn btn-primary" href="">Ghé nhà Tèo</a>
+            <a class="btn btn-primary" href="<?= DOCUMENT_ROOT ?>/products">Ghé nhà Tèo</a>
         </div>
     </div>
 </div>
