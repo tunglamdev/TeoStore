@@ -27,7 +27,7 @@
                     <?php else: ?>
 
                         <div id="header-cart" class="col-xl-1 col-md-0 d-flex justify-content-end">
-                            <a href="" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="<?= DOCUMENT_ROOT?>/cart" id="cart" class="rounded-circle text-center" style="width: 50px; height: 50px;"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                         <div id="menu-dropdown" class="col-xl-1 col-md-0 d-flex justify-content-end position-relative">
                             <img id="avatar" class="rounded-circle dropdown-toggle" style="width: 50px" src="<?= URL_IMG ?>/users/<?= $_SESSION['user']['avatar']?>" alt="avatar">
@@ -58,7 +58,7 @@
                                     <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/login"><i class="fas fa-sign-in-alt me-2"></i>Đăng nhập</a></li>
                                 <?php else: ?>
                                     <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/user"><i class="fas fa-user me-2"></i>Cá nhân</a></li>
-                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="#"><i class="fas fa-cart-plus me-2"></i>Giỏ hàng</a></li>
+                                    <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/cart"><i class="fas fa-cart-plus me-2"></i>Giỏ hàng</a></li>
                                     <li class="header__mobile-nav-link"><a class="dropdown-item" href="<?= DOCUMENT_ROOT?>/accounts/logout"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
                                 <?php endif; ?>
                                

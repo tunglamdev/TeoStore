@@ -8,6 +8,10 @@
             $this->cartModel = $this->model("CartModel");
         }
 
+        function Index(){
+            $this->view("cart/index");
+        }
+
         function add(){
             if(isset($_GET)){
                 $result = $this->cartModel->addToCart($_GET);
