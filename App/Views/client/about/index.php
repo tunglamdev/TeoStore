@@ -21,7 +21,7 @@
 <div class="wrapper pt-3 pb-3" style="background-color: var(--body)!important;">
     <div class="container">
         <h3 class="sub-title text-center" style="color: var(--green)">Giới thiệu</h2>
-        <h2 class="title text-center" style="color: var(--primary)">RAU SẠCH ĐẠT CHUẨN 4K</h2>
+        <h2 class="title text-center" style="color: var(--blue)">RAU SẠCH ĐẠT CHUẨN 4K</h2>
         <div class="organic">
             <div class="vege-4k pe-5 ps-5">
                 <img class="me-2" src="<?= URL_ICON ?>/4k-1.jpg" alt="">

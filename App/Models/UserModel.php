@@ -60,31 +60,31 @@
             else return false;
         }
 
+        //Update user information
+        function updateInfor($id_user, $data){
+            $stmt = $this->conn->prepare("UPDATE users SET name=?, email=?, phone=?, address=? WHERE id=?");
+            $stmt->bind_param("sssss", $data["name"], $data["email"], $data["phone"], $data["address"], $id_user);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if ($result>0){
+                return true;
+            }
+            else return false;
+        }
+
         //Get user information
-        // function updateInfor($id_user, $data){
-        //     $stmt = $this->conn->prepare("UPDATE users SET name=?, email=?, phone=?, address=? WHERE id=?");
-        //     $stmt->bind_param("sssss", $data["name"], $data["email"], $data["phone"], $data["address"], $id_user);
-        //     $stmt->execute();
-        //     $result = $stmt->affected_rows;
+        function getInfor($id_user){
+            $stmt = $this->conn->prepare("SELECT * FROM users WHERE id=?");
+            $stmt->bind_param("s", $id_user);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-        //     if ($result>0){
-        //         return true;
-        //     }
-        //     else return false;
-        // }
-
-        // Update user information
-        // function getInfor($id_user){
-        //     $stmt = $this->conn->prepare("SELECT * FROM users WHERE id=?");
-        //     $stmt->bind_param("s", $id_user);
-        //     $stmt->execute();
-        //     $result = $stmt->get_result();
-
-        //     if ($result->num_rows >0){
-        //         return $result->fetch_assoc();
-        //     }
-        //     else return false;
-        // }
+            if ($result->num_rows >0){
+                return $result->fetch_assoc();
+            }
+            else return false;
+        }
 
         // Upload avatar
         // function uploadAvatar($id_user, $data){

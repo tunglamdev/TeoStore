@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="<?= URL_CSS ?>/guarantee.css">
         <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
         <link rel="stylesheet" href="<?= URL_CSS ?>/about.css">
+        <link rel="stylesheet" href="<?= URL_CSS ?>/profile.css">
     <?php endif; ?>
 
     <?php if ($GLOBALS['currentPage'] == "Accounts") : ?>

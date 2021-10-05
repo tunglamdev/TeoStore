@@ -4,7 +4,7 @@
         <div class="footer">
             <div class="footer-intro">
                 <img class="footer-intro-img mb-2" src="<?= URL_ICON ?>/logo.png" alt="logo">
-                <p class="footer-intro-content"><b class="footer-intro-content">Nhà Tèo strore </b>là nơi chuyên cung cấp các loại rau củ quả sạch, không chất bảo quản, an toàn cho sức khỏe, đáp ứng nhu cầu của tất cả khách hàng. Rau Nhà Tèo store </b>hứa hẹn sẽ đem đến cho bạn bữa ăn an toàn và dinh dưỡng.</p>
+                <p class="footer-intro-content"><b class="footer-intro-content">Rau Nhà Tèo strore </b>là nơi chuyên cung cấp các loại rau củ quả sạch, không chất bảo quản, an toàn cho sức khỏe, đáp ứng nhu cầu của tất cả khách hàng. Rau Nhà Tèo store </b>hứa hẹn sẽ đem đến cho bạn bữa ăn an toàn và dinh dưỡng.</p>
                 <p class="footer-intro-content">© 2021 Rau Nha Teo. All rights reserved.</p>
             </div>
             <div class="footer-nav">
