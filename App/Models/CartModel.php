@@ -37,7 +37,7 @@
             ];
         }
 
-        //Kiem tra trong gio hang da co sp nay chu
+        //Kiem tra trong gio hang da co sp nay chua
         function numOfVege($id_vege, $id_user){
             $stmt = $this->conn->prepare("SELECT amount FROM carts WHERE id_veg=? AND id_user=?");
             $stmt->bind_param("ii", $id_vege, $id_user);
@@ -58,6 +58,19 @@
             $result = $stmt->get_result();
             if($result->num_rows>0){
                 return $result->num_rows;
+            }
+            else{
+                return 0;
+            }
+        }
+
+        function getVegeFromCart($id_user){
+            $stmt = $this->conn->prepare("CALL sp_selectVegInCartByUser(?)");
+            $stmt->bind_param("i", $id_user);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if($result->num_rows>0){
+                return $result->fetch_all(MYSQLI_ASSOC);
             }
             else{
                 return 0;

@@ -9,7 +9,9 @@
         }
 
         function Index(){
-            $this->view("cart/index");
+            $data["cart"] = $this->cartModel->getVegeFromCart($_SESSION["user"]["id"]);
+            if (!isset($data["cart"]) || $data["cart"]==0) $data["cart"]=[];
+            $this->view("cart/index", $data);
         }
 
         function add(){
