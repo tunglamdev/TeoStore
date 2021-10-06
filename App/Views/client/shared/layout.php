@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tèo's store</title>
+    <title>Rau Nhà Tèo store</title>
+    <link rel="shortcut icon" href="<?= URL_ICON?>/iconLogo.png">
     <link rel="stylesheet" href="<?= URL_FONT ?>/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= URL_BOOTSTRAP ?>/css/bootstrap.css">
     <link rel="stylesheet" href="<?= URL_CSS ?>/base.css">
@@ -16,6 +17,7 @@
         <link rel="stylesheet" href="<?= URL_CSS ?>/home.css">
         <link rel="stylesheet" href="<?= URL_CSS ?>/about.css">
         <link rel="stylesheet" href="<?= URL_CSS ?>/profile.css">
+        <link rel="stylesheet" href="<?= URL_CSS ?>/cart.css">
     <?php endif; ?>
 
     <?php if ($GLOBALS['currentPage'] == "Accounts") : ?>

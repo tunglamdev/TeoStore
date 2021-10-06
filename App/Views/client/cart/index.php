@@ -20,55 +20,47 @@
         </thead> 
         <tbody>
             <tr> 
-                <td data-th="Product" style="width:17.5%"> 
+                <td data-th="Bí xanh" style="width:15%"> 
                     <img src="<?= URL_IMG ?>/vegetables/7.jpg" alt="Sản phẩm 1" class="img-responsive" width="100">
                 </td>
-                <td style="width:15%"> 
+                <td class="product-name" style="width:15%"> 
                     <h5 class="nomargin">Bí xanh</h5> 
                 </td>
-                <td data-th="Weight">500g</td> 
-                <td data-th="Price">200.000 đ</td> 
-                <td data-th="Quantity">
+                <td data-th="Trọng lượng">500g</td> 
+                <td data-th="Đơn giá">200.000 đ</td> 
+                <td data-th="Số lượng">
                     <input class="form-control text-center" value="1" type="number">
                 </td> 
-                <td data-th="Subtotal" class="text-center">200.000 đ</td> 
-                <td class="actions" data-th="">
+                <td data-th="Thành tiền">200.000 đ</td> 
+                <td class="actions" data-th="Xóa sản phẩm">
                     <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                 </td> 
             </tr> 
             <tr> 
-                <td data-th="Product"> 
+                <td data-th="Bí ngòi"> 
                     <img src="<?= URL_IMG ?>/vegetables/9.jpg" alt="Sản phẩm 1" class="img-responsive" width="100">
                 </td>
-                <td> 
+                <td class="product-name"> 
                     <h5 class="nomargin">Bí ngòi</h5> 
                 </td>
-                <td data-th="Weight">500g</td> 
-                <td data-th="Price">300.000 đ</td> 
-                <td data-th="Quantity">
+                <td data-th="Trọng lượng">500g</td> 
+                <td data-th="Đơn giá">300.000 đ</td> 
+                <td data-th="Số lượng">
                     <input class="form-control text-center" value="1" type="number">
                 </td> 
-                <td data-th="Subtotal" class="text-center">300.000 đ</td> 
-                <td class="actions" data-th="">
+                <td data-th="Thành tiền">300.000 đ</td> 
+                <td class="actions" data-th="Xóa sản phẩm">
                     <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                 </td> 
             </tr> 
         </tbody>
         <tfoot> 
-            <tr> 
-                <td colspan="2">
-                    <a href="" class="btn btn-primary"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
-                </td> 
-                <!-- <td class="hidden-xs"> </td>  -->
-                <td class="hidden-xs"> </td> 
-                <td class="hidden-xs"> </td> 
-                <td colspan="2" class="hidden-xs text-center">
-                    <strong>Tổng tiền 500.000 đ</strong>
-                </td> 
-                <td colspan="2">
-                    <a href="" class="btn btn-primary btn-block">Thanh toán</a>
-                </td> 
-            </tr> 
-        </tfoot> 
+            <tr> </tr> 
+        </tfoot>
     </table>
+    <div style="text-align:right">
+        <h5>Tổng tiền: 500.000</h5>
+        <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Tiếp tục mua hàng</a>
+        <a href="" class="btn btn-primary btn-block"><i class="fas fa-money-check"></i> Thanh toán</a>
+    </div>
 </div>
