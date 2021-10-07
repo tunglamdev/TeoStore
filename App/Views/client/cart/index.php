@@ -11,7 +11,7 @@
         <div style="margin-bottom: 30px; text-align: center">
             <i class="sub-title">Không có sản phẩm nào trong giỏ hàng!</i>
             <div class="mt-5">
-                <img style="width: 200px; opacity: 0.3" src="<?= URL_ICON ?>/cart.png" alt="">
+                <a href="<?= DOCUMENT_ROOT ?>/products"><img style="width: 200px; opacity: 0.3" src="<?= URL_ICON ?>/cart.png" alt="Giỏ hàng trống"></a>
             </div>
         </div>
     <?php else : ?>
@@ -43,7 +43,7 @@
                         </td> 
                         <td data-th="Thành tiền"><?= number_format($cart["price"]*$cart['amount'],0, ',','.')?>đ</td> 
                         <td class="actions" data-th="Xóa sản phẩm">
-                            <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                            <button onclick="deleteItem(<?= $_SESSION['user']['id']?>,<?= $cart['id']?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                         </td> 
                     </tr>
                     <?php $total = $total + $cart["price"]*$cart['amount']?>

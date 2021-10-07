@@ -12,9 +12,10 @@
             $phone = $data["phone"];
             $role=1;
             $address = $data["address"];
+            $avatar="default.jpg";
 
-            $stmt = $this->conn->prepare("INSERT INTO users VALUES(NULL, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssi", $name, $phone, $address, $password, $email, $role);
+            $stmt = $this->conn->prepare("INSERT INTO users VALUES(NULL, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssssis", $name, $phone, $address, $password, $email, $role, $avatar);
             $stmt->execute();
 
             $result = $stmt->affected_rows;

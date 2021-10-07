@@ -30,7 +30,7 @@ function addToCart(id_user, id_vege){
     xhttp.send();
 }
 
-//Show message that adding cakes to cart is successful or failed
+//Show message that adding cakes to cart is successful
 function launch_toast_yes(message) {
     var x = document.getElementById("toast-yes")
     document.getElementById("toast-yes-desc").innerText = message;
@@ -40,6 +40,7 @@ function launch_toast_yes(message) {
     }, 5000);
 }
 
+//Show message that adding cakes to cart is failed
 function launch_toast_no(message) {
     var x = document.getElementById("toast-no")
     document.getElementById("toast-no-desc").innerText = message;
@@ -47,4 +48,29 @@ function launch_toast_no(message) {
     setTimeout(function(){ 
         x.className = x.className.replace("show", ""); 
     }, 5000);
+}
+
+function deleteItem(id_user, id_vege){
+    var check = confirm('Bạn chắc chắn muốn xóa sản phẩm này?');
+    if(check==true){
+        var documentRoot = document.getElementById("documentRootId").innerText;
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function(){
+            
+            if(this.readyState==4 && this.status==200){
+
+                var reponse = this.response;
+
+                if(reponse==true){ 
+                    window.location.reload(false);
+                }
+                else{
+                    alert("Không thể xóa!");
+                }
+            }
+        }
+        xhttp.open("GET", `${documentRoot}/cart/delete?userId=${id_user}&vegeId=${id_vege}`, true);
+        xhttp.send();
+    }
 }

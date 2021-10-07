@@ -32,5 +32,14 @@
                 echo "0";
             }
         }
+
+        function delete(){
+            if(isset($_GET)){
+                $result = $this->cartModel->deleteItemInCart($_GET);
+                echo $result;
+                return;
+            }
+            else echo "Can not delete this item!"; 
+        }
     }
 ?>

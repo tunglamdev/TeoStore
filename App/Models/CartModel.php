@@ -76,5 +76,19 @@
                 return 0;
             }
         }
+
+        // Delete item in cart
+        function deleteItemInCart($data){
+            $id_user = $data["userId"];
+            $id_vege = $data["vegeId"];
+            $isSuccess = true;
+         
+            $stmt = $this->conn->prepare("DELETE FROM carts WHERE id_veg=? AND id_user=?");
+            $stmt->bind_param("ii",$id_vege, $id_user);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+            if($result<1) $isSuccess = false;
+            return $isSuccess;
+        }
     }
 ?>
