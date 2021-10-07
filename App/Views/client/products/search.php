@@ -8,7 +8,7 @@
     <div class="container d-flex flex-column align-items-center">
         <h2 class="title">RAU HÔM NAY TẠI NHÀ TÈO</h2>
         <h3 class="sub-title">Tìm kiếm: <?= $_GET["key"] ?></h2>
-        <div class="cate-content container categories">
+        <div class="cate-content container menu">
             <?php foreach($data["vege_to_show"] as $i => $vege) :?>
                 <div class="cate-item">
                     <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/<?= $vege['image'] ?>" alt=""></a>

@@ -70,10 +70,11 @@
 
 .categories{
     display: grid!important;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-    /* width: 85%!important; */
+    padding-left: 180px;
+    padding-right: 180px;
 }
 
 .cate-item{
@@ -126,7 +127,7 @@
         font-size: 20px;
     }
 
-    .categories{
+    .categories, .menu{
         display: flex!important;
         flex-direction: column;
     }
@@ -134,12 +135,21 @@
 
 /* Tablet */
 @media only screen and (min-width: 741px) and (max-width: 1024px){
-    .categories{
+    .categories, .menu{
         grid-template-columns: 1fr 1fr;
     }
 }
 
 /* --------------Menu------------- */
+.menu{
+    display: grid!important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
 .star-vote{
     display: flex;
     justify-content: center;
