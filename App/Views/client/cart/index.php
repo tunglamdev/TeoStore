@@ -55,7 +55,7 @@
         </table>
         <div style="text-align:right">
             <h5>Tổng tiền: <?= number_format($total,0, ',','.')?>đ</h5>
-            <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Tiếp tục mua hàng</a>
+            <a href="<?= DOCUMENT_ROOT ?>/products" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Tiếp tục mua hàng</a>
             <a href="" class="btn btn-primary btn-block"><i class="fas fa-money-check"></i> Thanh toán</a>
         </div>
     <?php endif; ?>
