@@ -41,5 +41,14 @@
             }
             else echo "Can not delete this item!"; 
         }
+
+        function quantity(){
+            if(isset($_GET)){
+                $result = $this->cartModel->updateQuantity($_GET);
+                echo $result;
+                return;
+            }
+            else echo "Can not update quantity!"; 
+        }
     }
 ?>

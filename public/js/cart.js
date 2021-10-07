@@ -1,4 +1,4 @@
-//Add cake to cart
+//Add vege to cart
 function addToCart(id_user, id_vege){
     //Check login
     if(id_user==0){
@@ -73,4 +73,26 @@ function deleteItem(id_user, id_vege){
         xhttp.open("GET", `${documentRoot}/cart/delete?userId=${id_user}&vegeId=${id_vege}`, true);
         xhttp.send();
     }
+}
+
+function updateQuantity(id_user, id_vege, current_num){
+    var documentRoot = document.getElementById("documentRootId").innerText;
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function(){
+        
+        if(this.readyState==4 && this.status==200){
+
+            var reponse = this.response;
+
+            if(reponse==true){
+                window.location.reload(false);
+            }
+            else{
+                alert("Không thể thay đổi số lượng!");
+            }
+        }
+    }
+    xhttp.open("GET", `${documentRoot}/cart/quantity?userId=${id_user}&vegeId=${id_vege}&num=${current_num}`, true);
+    xhttp.send();
 }

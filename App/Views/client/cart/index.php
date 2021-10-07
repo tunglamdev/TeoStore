@@ -39,7 +39,7 @@
                         <td data-th="Trọng lượng"><?= $cart['weight']==1000 ? '1k' : $cart['weight'] ?>g</td> 
                         <td data-th="Đơn giá"><?= number_format($cart["price"],0, ',','.')?>đ</td> 
                         <td data-th="Số lượng">
-                            <input class="form-control text-center" value="<?= $cart['amount']?>" type="number">
+                            <input onchange="updateQuantity(<?= $_SESSION['user']['id']?>, <?= $cart['id']?>, this.value)" class="form-control text-center" value="<?= $cart['amount']?>" type="number" min="1" max="10">
                         </td> 
                         <td data-th="Thành tiền"><?= number_format($cart["price"]*$cart['amount'],0, ',','.')?>đ</td> 
                         <td class="actions" data-th="Xóa sản phẩm">

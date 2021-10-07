@@ -90,5 +90,19 @@
             if($result<1) $isSuccess = false;
             return $isSuccess;
         }
+
+        function updateQuantity($data){
+            $id_user = $data["userId"];
+            $id_vege = $data["vegeId"];
+            $quantity = $data["num"];
+            $isSuccess = true;
+         
+            $stmt = $this->conn->prepare("UPDATE carts SET amount=? WHERE id_veg=? AND id_user=?");
+            $stmt->bind_param("iii",$quantity, $id_vege, $id_user);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+            if($result<1) $isSuccess = false;
+            return $isSuccess;
+        }
     }
 ?>
