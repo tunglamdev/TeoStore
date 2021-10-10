@@ -93,5 +93,23 @@ use App\Core\Controller;
             $this->view("products/search", $data);
         }
 
+        //Detail
+        function detail($id){
+            $veges1 = $this->vegeModel->getVegeDetail($id);
+            if(!$veges1){
+                $veges1=[];
+            }
+            else{
+                $veges2 = $this->vegeModel->getVegeByCate($veges1['id_veg_type']);
+                if(!$veges2){
+                    $veges2=[];
+                }
+
+                $data["vege_to_show"] = $veges1;
+                $data["vege_by_cate"] = $veges2;
+            }
+            $this->view("products/detail", $data);
+        }
+
     }
 ?>

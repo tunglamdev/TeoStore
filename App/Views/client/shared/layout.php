@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rau Nhà Tèo store</title>
+    <title>Rau Nhà Tèo Store</title>
     <link rel="shortcut icon" href="<?= URL_ICON?>/iconLogo.png">
     <link rel="stylesheet" href="<?= URL_FONT ?>/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= URL_BOOTSTRAP ?>/css/bootstrap.css">
@@ -50,7 +50,7 @@
     </div>
 
     <!-- JQuery -->
-    <script src="<?= URL_JS ?>/jquery-3.6.0.min.js"></script>
+    <script src="<?= URL_JS ?>/jquery.js"></script>
 
     <!-- Javascript for Bootstrap -->
     <script src="<?= URL_BOOTSTRAP ?>/js/bootstrap.min.js"></script>
@@ -70,5 +70,6 @@
     </script>
 
     <script src="<?= URL_JS ?>/cart.js"></script>
+    <script src="<?= URL_JS ?>/profile.js"></script>
 </body>
 </html>

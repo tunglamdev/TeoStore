@@ -26,6 +26,11 @@ img.about-logo{
     text-align: justify;
 }
 
+.detail-content{
+    font-size: 20px!important;
+    font-style: normal!important;
+}
+
 /* Mobile */
 @media only screen and (max-width: 739px){
     .about{
@@ -33,13 +38,14 @@ img.about-logo{
     }
 
     img.about-logo{
-        width: 100%;
+        width: 100%!important;
         margin-left: 0;
     }
     
     .about-content{
-        width: 100%;
+        width: 100%!important;
         margin-right: 0;
+        padding: 0 !important;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -57,19 +63,32 @@ img.about-logo{
     .about-content a.btn{
         font-size: 16px!important;
     }
+
+    .detail-amount .form-control{
+        width: 50% !important;
+    }
+
+    .detail-content{
+        font-size: 18px!important;
+    }
+
+    .detail-bonus h5{
+        text-align: center;
+    }
 }
 
 /* Tablet */
 @media only screen and (min-width: 739px) and (max-width: 1024px){
     img.about-logo{
-        width: 50%;
+        width: 50%!important;
         padding-right: 5px;
         margin-left: 0;
     }
     
     .about-content{
-        width: 50%;
-        padding-left: 5px;
+        width: 50%!important;
+        padding: 0!important;
+        padding-left: 5px!important;
         margin-right: 0;
     }
 
@@ -83,6 +102,15 @@ img.about-logo{
 
     .about-content a{
         font-size: 16px;
+    }
+
+    .detail-bonus{
+        width: 200%!important;
+        margin-left: -100%;
+    }
+
+    .detail-content{
+        font-size: 18px!important;
     }
 }
 

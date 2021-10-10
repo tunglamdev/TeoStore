@@ -77,6 +77,21 @@
             }
         }
 
+         //Get vegetables by categories to show on page
+        function getVegeByCate($idCate){
+            $stmt = $this->conn->prepare("SELECT * FROM vegetables WHERE id_veg_type = ?");
+            $stmt->bind_param("i", $idCate);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                return false;
+            }
+        }
+
         //Count vegetables by categories
         function countVegeByCategories($idCate){
             $stmt = $this->conn->prepare("SELECT id FROM vegetables WHERE id_veg_type = ?");
@@ -93,9 +108,24 @@
         }
 
         //get vegetables by id
-        function getVegeById($idCake){
+        function getVegeById($idVege){
             $stmt = $this->conn->prepare("SELECT * FROM vegetables WHERE id = ?");
-            $stmt->bind_param("i", $idCake);
+            $stmt->bind_param("i", $idVege);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_assoc();
+            }
+            else{
+                return false;
+            }
+        }
+
+        //get vegetables by id
+        function getVegeDetail($idVege){
+            $stmt = $this->conn->prepare("CALL sp_getVegeDetail(?)");
+            $stmt->bind_param("i", $idVege);
             $stmt->execute();
             $result = $stmt->get_result();
 

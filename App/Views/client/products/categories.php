@@ -11,7 +11,7 @@
         <div class="cate-content container menu">
             <?php foreach($data["vege_to_show"] as $i => $vege) :?>
                 <div class="cate-item">
-                    <a href="#"><img class="item-img" src="<?= URL_IMG ?>/vegetables/<?= $vege['image'] ?>" alt=""></a>
+                    <a href="<?= DOCUMENT_ROOT?>/products/detail/<?= $vege['id']?>"><img class="item-img" src="<?= URL_IMG ?>/vegetables/<?= $vege['image'] ?>" alt=""></a>
                     <h5 class="item-name"><?= ucwords($vege['name']) ?></h5>
                     <div class="star-vote mt-1">
                         <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
