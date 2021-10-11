@@ -22,9 +22,9 @@
             <p class="detail-content">Khối lượng: <b><?= $data['vege_to_show']['weight']==1000 ? '1k' : $data['vege_to_show']['weight'] ?>g</b></p>
             <div class="detail-amount mb-3">
                 <p class="d-inline detail-content">Số lượng:</p>
-                <input id="detail_amount" class="form-control text-center d-inline w-25" value="1" type="number" min="1" max="10">
+                <input id="detail_amount" onchange="updateValue()" class="form-control text-center d-inline w-25" value="1" type="number" min="1" max="10">
             </div>
-            <button class="btn btn-primary" onclick="addToCartInDetail(<?= $_SESSION['user']['id'] ?>, <?= $data['vege_to_show']['id']?>)">Thêm vào giỏ</button>
+            <button class="btn btn-primary" onclick="addToCartInDetail(<?= isset($_SESSION['user'])? $_SESSION['user']['id']: 0 ?>, <?= $data['vege_to_show']['id']?>)">Thêm vào giỏ</button>
             <div class="detail-bonus mt-4">
                 <h5 style="color: var(--bs-primary); font-weight: 600; margin-bottom: 20px;">NGUỒN GỐC SẢN PHẨM</h5>
                 <p class="detail-content"><b>Hạt giống:</b> <?= $data['vege_to_show']['seed'] ?></p>

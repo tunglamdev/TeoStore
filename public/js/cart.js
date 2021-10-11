@@ -62,6 +62,10 @@ function addToCartInDetail(id_user, id_vege){
     xhttp.send();
 }
 
+function updateValue(){
+    document.getElementById("detail_amount").value = this.value;
+}
+
 //Show message that adding cakes to cart is successful
 function launch_toast_yes(message) {
     var x = document.getElementById("toast-yes")
