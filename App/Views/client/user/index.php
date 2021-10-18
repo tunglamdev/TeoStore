@@ -13,7 +13,7 @@
                     <img class ="avatar-img mb-3" src="<?= URL_IMG ?>/users/<?= $data['user']['avatar']?>" alt="Ảnh đại diện">
                     <form action="" method="post">
                         <input type="file" name="file" id="file">
-                        <label class ="btn btn-primary" for="file">Tải ảnh lên</i></label>
+                        <label class ="btn btn-primary" for="file">Tải ảnh lên</label>
                     </form>
                 </div>
                 <div class="user-info">

@@ -28,6 +28,10 @@
     defined("URL_IMG") ?: define("URL_IMG", URL_PUBLIC. "/img");
     defined("URL_BOOTSTRAP") ?: define("URL_BOOTSTRAP", URL_PUBLIC. "/bootstrap");
     defined("URL_FONT") ?: define("URL_FONT", URL_PUBLIC. "/font");
+    
+    //Admin sidebar
+    $adminSideBar = require_once CONF."/adminSideBar.php";
+    defined("adminSideBar") ?: define("adminSideBar", $adminSideBar);
 
     require_once CORE.DS."App.php";
     require_once CORE.DS."Controller.php";

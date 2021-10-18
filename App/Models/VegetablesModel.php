@@ -122,7 +122,7 @@
             }
         }
 
-        //get vegetables by id
+        //get vegetables details by id
         function getVegeDetail($idVege){
             $stmt = $this->conn->prepare("CALL sp_getVegeDetail(?)");
             $stmt->bind_param("i", $idVege);
@@ -153,6 +153,68 @@
             }
 
             return $veges;
+        }
+
+        // Admin
+        //Create new vege processing
+        function insert($data){
+            $cate = $data["cate"];
+            $name = $data["name"];
+            $weight = $data["weight"];
+            $price = $data["price"];
+            $orig = $data["orig"];
+            $image = $data["image"];
+
+            $stmt = $this->conn->prepare("INSERT INTO vegetables VALUES (NULL, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("siiiis",$name, $weight, $price, $orig, $cate, $image);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if($result>0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+
+        //Edit vege processing
+        function update($data){
+            $id = $data["id"];
+            $cate = $data["cate"];
+            $name = $data["name"];
+            $weight = $data["weight"];
+            $price = $data["price"];
+            $orig = $data["orig"];
+            $image = $data["image"];
+
+            $stmt = $this->conn->prepare("UPDATE vegetables SET name=?, price=?, weight=?, id_orig=?, id_veg_type=?, image=? WHERE id=?");
+            $stmt->bind_param("siiiisi",$name, $price, $weight, $orig, $cate, $image, $id);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if($result>0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        function deleteVege($data){
+            $id = $data["vegeId"];
+            $stmt = $this->conn->prepare("DELETE FROM vegetables WHERE id=?");
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if($result<1){
+                return false;
+            }
+            else{
+                return true;
+            }
         }
     }
 ?>

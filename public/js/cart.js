@@ -62,8 +62,8 @@ function addToCartInDetail(id_user, id_vege){
     xhttp.send();
 }
 
-function updateValue(){
-    document.getElementById("detail_amount").value = this.value;
+function updateValue(num){
+    document.getElementById("detail_amount").value = num;
 }
 
 //Show message that adding cakes to cart is successful
