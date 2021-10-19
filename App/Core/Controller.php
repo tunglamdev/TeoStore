@@ -17,6 +17,10 @@
         // Call view
         function view($view, $data=[]){
             if($GLOBALS["isAdmin"]==true){
+                // if (!isset($_SESSION["admin"])){
+                //     require_once VIEW . DS . "admin/auth/login.php";
+                //     return;
+                // }
                 if(file_exists(VIEW . DS . "admin". DS . $view . ".php")){
                     require_once VIEW . DS . "admin/shared/layout.php";
                 }

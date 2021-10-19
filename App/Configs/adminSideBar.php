@@ -33,6 +33,13 @@
                 "name" => "orders",
                 "icon" => "nav-icon fas fa-clipboard-list",
                 "link" => DOCUMENT_ROOT."/admin/orders"
+            ],
+
+            "Đăng xuất" => [
+                "title" => "Đăng xuất",
+                "name" => "logout",
+                "icon" => "nav-icon fas fa-sign-out-alt",
+                "link" => DOCUMENT_ROOT."/admin/accounts/logout"
             ]
         ]
 ?>

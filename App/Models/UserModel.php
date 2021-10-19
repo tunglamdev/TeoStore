@@ -48,6 +48,29 @@
             else return [false,''];
         }
 
+        //Authenticate when admin login
+        function adminAuthenticate($data){    
+            $email = $data["email"];
+            $password = $data["password"];
+            $role=0;
+            $stmt = $this->conn->prepare("SELECT * FROM users WHERE email=? AND role=?");
+            $stmt->bind_param("si", $email, $role);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows >0){
+
+                $result = $result->fetch_assoc();
+
+                // if (password_verify($password, $result["password"])==true) return [true, $result];
+                // else return "Password incorrect!";
+
+                if ($password === $result["password"]) return [true, $result];
+                else return "Password incorrect!";
+            }
+            else return [false,''];
+        }
+
         //Check email exist
         function checkEmailExist($email){    
             $stmt = $this->conn->prepare("SELECT * FROM users WHERE email=?");
