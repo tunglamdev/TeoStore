@@ -49,7 +49,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Edit</button>
+                  <button type="submit" class="btn btn-info">Chỉnh sửa</button>
                 </div>
               </form>
             </div>
