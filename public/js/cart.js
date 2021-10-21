@@ -132,3 +132,30 @@ function updateQuantity(id_user, id_vege, current_num){
     xhttp.open("GET", `${documentRoot}/cart/quantity?userId=${id_user}&vegeId=${id_vege}&num=${current_num}`, true);
     xhttp.send();
 }
+
+function book(id_user){
+    alert("Kiểm tra lại thông tin đặt chính là thông tin của tài khoản này!")
+    var check = confirm('Bạn có muốn đặt đơn hàng này?');
+        if(check==true){
+        var documentRoot = document.getElementById("documentRootId").innerText;
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function(){
+            
+            if(this.readyState==4 && this.status==200){
+
+                var reponse = this.response;
+
+                if(reponse==true){
+                    window.location.reload(false);
+                    alert("Đã đặt hàng thành công! Xem thông tin đơn hàng trong mục Cá nhân.");
+                }
+                else{
+                    alert("Không thể đặt hàng!");
+                }
+            }
+        }
+        xhttp.open("GET", `${documentRoot}/cart/order?userId=${id_user}`, true);
+        xhttp.send();
+    }
+}

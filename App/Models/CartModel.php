@@ -104,5 +104,30 @@
             if($result<1) $isSuccess = false;
             return $isSuccess;
         }
+
+        function getById($id){
+            $userId = $id;
+            $stmt = $this->conn->prepare("SELECT * FROM carts WHERE id_user=?");
+            $stmt->bind_param("i", $userId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if($result->num_rows>0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                return 0;
+            }
+        }
+
+        function deleteAll($id_user){
+            $isSuccess = true;
+        
+            $stmt = $this->conn->prepare("DELETE FROM carts WHERE id_user=?");
+            $stmt->bind_param("i",$id_user);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+            if($result<1) $isSuccess = false;
+            return $isSuccess;
+        }
     }
 ?>

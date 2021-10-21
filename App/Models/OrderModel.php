@@ -76,5 +76,32 @@
             }
             else return false;
         }
+
+        function book($userId){
+            $stmt = $this->conn->prepare("CALL sp_book(?)");
+            $stmt->bind_param("i", $userId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows >0){
+                return $result->fetch_assoc();
+            }
+            else return false;
+        }
+
+        function addToDetails($data){
+            $orderId = $data["id_order"];
+            $vegeId = $data["id_vege"];
+            $amount = $data["amount"];
+            $stmt = $this->conn->prepare("INSERT INTO order_details VALUES (?,?,?)");
+            $stmt->bind_param("iii", $orderId, $vegeId, $amount);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if ($result>0){
+                return true;
+            }
+            else return false;
+        }
     }
 ?>

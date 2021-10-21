@@ -56,7 +56,7 @@
         <div style="text-align:right">
             <h5 style="font-weight:600">Tổng tiền: <?= number_format($total,0, ',','.')?>đ</h5>
             <a href="<?= DOCUMENT_ROOT ?>/products" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Tiếp tục mua hàng</a>
-            <a href="" class="btn btn-primary btn-block"><i class="fas fa-money-check"></i> Thanh toán</a>
+            <button onclick="book(<?= $_SESSION['user']['id']?>);" class="btn btn-primary btn-block"><i class="fas fa-money-check"></i> Thanh toán</button>
         </div>
     <?php endif; ?>
 </div>

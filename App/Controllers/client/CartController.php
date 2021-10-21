@@ -3,9 +3,11 @@
 
     class CartController extends Controller{
         private $cartModel;
+        private $orderModel;
 
         function __construct(){
             $this->cartModel = $this->model("CartModel");
+            $this->orderModel = $this->model("OrderModel");
         }
 
         function Index(){
@@ -46,6 +48,24 @@
             if(isset($_GET)){
                 $result = $this->cartModel->updateQuantity($_GET);
                 echo $result;
+                return;
+            }
+            else echo "Can not update quantity!"; 
+        }
+
+        function order(){
+            if(isset($_GET)){
+                $check = true;
+                $result1 = $this->orderModel->book($_GET["userId"]);
+                $result2 = $this->cartModel->getById($_GET["userId"]);
+                foreach ($result2 as $i => $item){
+                    $data["id_order"] = $result1["max(id)"];
+                    $data["id_vege"] = $item["id_veg"];
+                    $data["amount"] = $item["amount"];
+                    $check = $this->orderModel->addToDetails($data);
+                }
+                $check = $this->cartModel->deleteAll($_GET["userId"]);
+                echo $check;
                 return;
             }
             else echo "Can not update quantity!"; 
