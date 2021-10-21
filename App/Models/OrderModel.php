@@ -103,5 +103,31 @@
             }
             else return false;
         }
+
+        // Admin
+        function all(){
+            $sql = "SELECT O.id as id, U.name as username, U.phone as phone, U.address as address, S.name as status FROM orders O JOIN users U ON O.id_user = U.id
+                                                                                                                                JOIN status S ON O.id_status = S.id";
+            $result = $this->conn->query($sql);
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                return false;
+            }
+        }
+
+        function getOrderDetails($orderId){
+            $stmt = $this->conn->prepare("CALL sp_getOrderDetails(?)");
+            $stmt->bind_param("i", $orderId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else return false;
+        }
     }
 ?>
