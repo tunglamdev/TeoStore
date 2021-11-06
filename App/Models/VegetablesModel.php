@@ -216,5 +216,85 @@
                 return true;
             }
         }
+
+        //Get sale vege
+        function getSale(){
+            $sql = "SELECT * FROM vegetables WHERE sale=1";
+            $result = $this->conn->query($sql);
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                return false;
+            }
+        }
+
+        function createSale($data){
+            $id = $data["id_vege"];
+            $sale_price= $data["price"];
+            $sale = 1;
+            $stmt = $this->conn->prepare("UPDATE vegetables SET sale_price=?, sale=? WHERE id=?");
+            $stmt->bind_param("sii", $sale_price, $sale, $id);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if($result<1){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        function updateSalePrice($data){
+            $id = $data["id"];
+            $sale_price= $data["price"];
+            $stmt = $this->conn->prepare("UPDATE vegetables SET sale_price=? WHERE id=?");
+            $stmt->bind_param("ii", $sale_price, $id);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if($result<1){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        function getPrice($data){
+            $id = $data["vegeId"];
+            $stmt = $this->conn->prepare("SELECT price FROM vegetables WHERE id=?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                $veges = $result->fetch_assoc();
+            }
+            else{
+                $veges =[];
+            }
+
+            return $veges;
+        }
+
+        function deleteSale($data){
+            $id = $data["vegeId"];
+            $sale_price= NULL;
+            $sale = 0;
+            $stmt = $this->conn->prepare("UPDATE vegetables SET sale_price=?, sale=? WHERE id=?");
+            $stmt->bind_param("sii", $sale_price, $sale, $id);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+
+            if($result<1){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
     }
 ?>

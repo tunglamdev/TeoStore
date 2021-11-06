@@ -35,6 +35,13 @@
                 "link" => DOCUMENT_ROOT."/admin/orders"
             ],
 
+            "Khuyến mãi" => [
+                "title" => "Khuyến mãi",
+                "name" => "orders",
+                "icon" => "nav-icon fas fas fa-percent",
+                "link" => DOCUMENT_ROOT."/admin/sale"
+            ],
+
             "Đăng xuất" => [
                 "title" => "Đăng xuất",
                 "name" => "logout",
