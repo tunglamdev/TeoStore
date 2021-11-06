@@ -22,7 +22,6 @@
                 if($result<1) $isSuccess = false;
             }
             else{//Chua co san pham nay => Them moi
-                $amount=1;
                 $stmt = $this->conn->prepare("INSERT INTO carts VALUES(?, ?, ?)");
                 $stmt->bind_param("iii", $id_user, $id_vege,  $amount);
                 $stmt->execute();

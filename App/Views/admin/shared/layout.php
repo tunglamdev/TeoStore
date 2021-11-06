@@ -91,6 +91,8 @@
         </script>
 
         <script src="<?= URL_PUBLIC ?>/admin/js/deleteItem.js"></script>
+        <script src="<?= URL_PUBLIC ?>/admin/js/order.js"></script>
+
     <?php endif; ?>
 
     <?php if(!isset($_SESSION['admin'])) : ?>

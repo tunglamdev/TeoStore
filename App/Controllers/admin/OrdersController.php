@@ -2,17 +2,32 @@
     use App\Core\Controller;
 
     class OrdersController extends Controller{
-        private $origModel;
+        private $orderModel;
+        private $statusModel;
         function __construct(){
             $this->orderModel = $this->model("OrderModel");
+            $this->statusModel = $this->model("StatusModel");
         }
 
         function Index(){
             $data["order"] = $this->orderModel->all();
-            foreach($data["order"] as $i => $order){
-                $data[$order["id"]]["details"] = $this->orderModel->getOrderDetails($order["id"]);
-            }
+            $data["status"] = $this->statusModel->all();
             $this->view("orders/index", $data);
+        }
+
+        function details($id){
+            $data["details"] = $this->orderModel->getOrderDetails($id);
+            $data["id"] = $id;
+            $this->view("orders/details", $data);
+        }
+
+        function update(){
+            if(isset($_GET)){
+                $result = $this->orderModel->updateStatus($_GET);
+                echo $result;
+                return;
+            }
+            else echo "Can not update this order!"; 
         }
     }
 ?>

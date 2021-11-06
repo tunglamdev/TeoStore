@@ -93,8 +93,9 @@
             $orderId = $data["id_order"];
             $vegeId = $data["id_vege"];
             $amount = $data["amount"];
-            $stmt = $this->conn->prepare("INSERT INTO order_details VALUES (?,?,?)");
-            $stmt->bind_param("iii", $orderId, $vegeId, $amount);
+            $price = $data["price"];
+            $stmt = $this->conn->prepare("INSERT INTO order_details VALUES (?,?,?,?)");
+            $stmt->bind_param("iiii", $orderId, $vegeId, $amount, $price);
             $stmt->execute();
             $result = $stmt->affected_rows;
 
@@ -106,8 +107,7 @@
 
         // Admin
         function all(){
-            $sql = "SELECT O.id as id, U.name as username, U.phone as phone, U.address as address, S.name as status FROM orders O JOIN users U ON O.id_user = U.id
-                                                                                                                                JOIN status S ON O.id_status = S.id";
+            $sql = "SELECT O.id as id, O.order_time as order_time, O.delivery_time as deli_time, S.id as status FROM orders O JOIN status S ON O.id_status = S.id";
             $result = $this->conn->query($sql);
 
             if($result->num_rows >0){
@@ -126,6 +126,19 @@
 
             if ($result->num_rows >0){
                 return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else return false;
+        }
+
+        function updateStatus($data){
+            $orderId = $data["orderId"];
+            $statusId = $data["statusId"];
+            $stmt = $this->conn->prepare("UPDATE orders SET id_status=? WHERE id=?");
+            $stmt->bind_param("ii", $statusId, $orderId);
+            $stmt->execute();
+            $result = $stmt->affected_rows;
+            if ($result>0){
+                return true;
             }
             else return false;
         }

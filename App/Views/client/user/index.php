@@ -85,7 +85,7 @@
                 <?php $total = 0; ?>
                 <div class="history-title">Mã đơn hàng: #<?= $orders["id"] ?></div>
                 
-                <?php foreach($data[14]["vege"] as $i => $vege) :?>
+                <?php foreach($data[$orders["id"]]["vege"] as $i => $vege) :?>
                     <div class="history-content">
                         <div class="history-content-img">
                                 <img src="<?= URL_IMG ?>/vegetables/<?= $vege['image'] ?>" alt="" class=>

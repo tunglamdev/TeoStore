@@ -4,10 +4,12 @@
     class CartController extends Controller{
         private $cartModel;
         private $orderModel;
+        private $vegeModel;
 
         function __construct(){
             $this->cartModel = $this->model("CartModel");
             $this->orderModel = $this->model("OrderModel");
+            $this->vegeModel = $this->model("VegetablesModel");
         }
 
         function Index(){
@@ -62,6 +64,8 @@
                     $data["id_order"] = $result1["max(id)"];
                     $data["id_vege"] = $item["id_veg"];
                     $data["amount"] = $item["amount"];
+                    $result3 = $this->vegeModel->getVegeById($data["id_vege"]);
+                    $data["price"] = $result3["price"];
                     $check = $this->orderModel->addToDetails($data);
                 }
                 $check = $this->cartModel->deleteAll($_GET["userId"]);

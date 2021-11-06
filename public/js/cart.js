@@ -31,13 +31,14 @@ function addToCart(id_user, id_vege){
 }
 
 //Add vege to cart
-function addToCartInDetail(id_user, id_vege){
+function addToCartInDetail(id_user, id_vege, id_amount){
     //Check login
     if(id_user==0){
         launch_toast_no("Vui lòng đăng nhập!");
         return;
     }
-    var num = document.getElementById("detail_amount").value;
+    var num = id_amount.value;
+    console.log(num);
     //Get url of server to run 'localhost:81/cart/add...'
     var documentRoot = document.getElementById("documentRootId").innerText;
     var xhttp = new XMLHttpRequest();
@@ -62,8 +63,8 @@ function addToCartInDetail(id_user, id_vege){
     xhttp.send();
 }
 
-function updateValue(num){
-    document.getElementById("detail_amount").value = num;
+function updateValue(id){
+    console.log(id.value);
 }
 
 //Show message that adding cakes to cart is successful
