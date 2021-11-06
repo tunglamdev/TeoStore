@@ -18,6 +18,9 @@
             //Get all of vegetables
             $data["vege"] = $this->vegeModel->all();
 
+            //Get sale vegetables
+            $data["sale"] = $this->vegeModel->getSale();
+
             //Get the number of vegetables
             $numOfVege = $this->vegeModel->count();
  
