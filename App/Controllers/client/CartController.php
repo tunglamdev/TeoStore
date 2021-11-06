@@ -65,7 +65,8 @@
                     $data["id_vege"] = $item["id_veg"];
                     $data["amount"] = $item["amount"];
                     $result3 = $this->vegeModel->getVegeById($data["id_vege"]);
-                    $data["price"] = $result3["price"];
+                    if ($result3["sale_price"]==NULL) $data["price"] = $result3["price"];
+                    else $data["price"] = $result3["sale_price"];
                     $check = $this->orderModel->addToDetails($data);
                 }
                 $check = $this->cartModel->deleteAll($_GET["userId"]);

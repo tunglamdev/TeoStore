@@ -37,7 +37,8 @@
                             <h5 class="nomargin"><?= $cart['name']?></h5> 
                         </td>
                         <td data-th="Trọng lượng"><?= $cart['weight']==1000 ? '1k' : $cart['weight'] ?>g</td> 
-                        <td data-th="Đơn giá"><?= number_format($cart["price"],0, ',','.')?>đ</td> 
+                        <td data-th="Đơn giá"><?= number_format($cart["sale_price"]==NULL ? $cart["price"] : $cart["sale_price"],0, ',','.')?>đ</td> 
+                        <?php if($cart["sale_price"]!=NULL) $cart["price"]=$cart["sale_price"]; ?>
                         <td data-th="Số lượng">
                             <input onchange="updateQuantity(<?= $_SESSION['user']['id']?>, <?= $cart['id']?>, this.value)" class="form-control text-center" value="<?= $cart['amount']?>" type="number" min="1" max="10">
                         </td> 

@@ -18,7 +18,7 @@
                 <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                 <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
             </div>
-            <h5 class="slide-price"><?= number_format($data['vege_to_show']['price'],0, ',','.') ?>đ</h5>
+            <h5 class="slide-price"><?= number_format($data["vege_to_show"]["sale_price"]==NULL ? $data['vege_to_show']['price'] : $data['vege_to_show']['sale_price'],0, ',','.') ?>đ</h5>
             <p class="detail-content">Khối lượng: <b><?= $data['vege_to_show']['weight']==1000 ? '1k' : $data['vege_to_show']['weight'] ?>g</b></p>
             <div class="detail-amount mb-3">
                 <p class="d-inline detail-content">Số lượng:</p>
@@ -53,7 +53,7 @@
                         <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
                     </div>
                     <div class="price-button">
-                        <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px"><?= number_format($vege["price"],0, ',','.') ?>đ</p>
+                        <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px"><?= number_format($vege["sale_price"]==NULL ? $vege["price"] : $vege["sale_price"],0, ',','.') ?>đ</p>
                         <button onclick="addToCart(<?= isset($_SESSION['user'])? $_SESSION['user']['id']: 0 ?> , <?= $vege['id']?>)" class="btn btn-primary" style="font-size: 14px; font-weight: 700;">Thêm vào giỏ</button>
                     </div>
                 </div>
