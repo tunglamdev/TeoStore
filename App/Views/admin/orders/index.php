@@ -31,6 +31,8 @@
                   <thead>
                   <tr>
                     <th>Mã đơn</th>
+                    <th>Tên khách hàng</th>
+                    <th>Địa chỉ</th>
                     <th>Thời gian đặt hàng</th>
                     <th>Trạng thái</th>
                     <th>Thời gian giao hàng (dự kiến)</th>
@@ -41,6 +43,8 @@
                   <?php foreach($data["order"] as $key => $order) :?>
                     <tr>
                       <td>#<?= $order["id"] ?></td>
+                      <td><?= $order["username"] ?></td>
+                      <td><?= $order["address"] ?></td>
                       <td><?= $order["order_time"] ?></td>
                       <td>
                         <select onchange="updateOrderStatus(<?= $order['id'] ?>, status_order<?= $order['id'] ?>)" class="custom-select" id="status_order<?= $order['id'] ?>" name="cate" required>

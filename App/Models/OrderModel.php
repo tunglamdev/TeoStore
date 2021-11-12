@@ -107,7 +107,7 @@
 
         // Admin
         function all(){
-            $sql = "SELECT O.id as id, O.order_time as order_time, O.delivery_time as deli_time, S.id as status FROM orders O JOIN status S ON O.id_status = S.id";
+            $sql = "SELECT O.id as id, O.order_time as order_time, O.delivery_time as deli_time, S.id as status, U.name as username, U.address as address FROM orders O JOIN status S ON O.id_status = S.id JOIN users U ON O.id_user = U.id";
             $result = $this->conn->query($sql);
 
             if($result->num_rows >0){
