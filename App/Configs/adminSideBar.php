@@ -35,6 +35,13 @@
                 "link" => DOCUMENT_ROOT."/admin/orders"
             ],
 
+            "Khách hàng" => [
+                "title" => "Khách hàng",
+                "name" => "customers",
+                "icon" => "nav-icon fas fas fa-users",
+                "link" => DOCUMENT_ROOT."/admin/customer"
+            ],
+
             "Khuyến mãi" => [
                 "title" => "Khuyến mãi",
                 "name" => "orders",

@@ -165,7 +165,7 @@
             $orig = $data["orig"];
             $image = $data["image"];
 
-            $stmt = $this->conn->prepare("INSERT INTO vegetables VALUES (NULL, ?, ?, ?, ?, ?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO vegetables VALUES (NULL, ?, ?, ?, ?, ?, ?, 0 ,NULL)");
             $stmt->bind_param("siiiis",$name, $weight, $price, $orig, $cate, $image);
             $stmt->execute();
             $result = $stmt->affected_rows;

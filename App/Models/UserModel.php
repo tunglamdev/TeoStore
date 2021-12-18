@@ -124,5 +124,17 @@
             }
             else return false;
         }
+
+        function getAll(){
+            $sql = "SELECT name, phone, address, email FROM users WHERE role=1";
+            $result = $this->conn->query($sql);
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                return false;
+            }
+        }
     }
 ?>
