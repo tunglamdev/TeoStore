@@ -1,12 +1,12 @@
 # Teo-Store
- E-commerce website for sports business - My project for the subject
+ This is an e-commerce website saling vegetables at the Teo store
  
  ## Technical Stack
  - PHP-MVC 
  - MySQL
  - Javascript
  - Bootstrap
- - HTML, CSS
+ - CSS
  - AdminLTE
 
  ## UI
