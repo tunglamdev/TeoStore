@@ -32,6 +32,104 @@
             </div>
         </div>
     </div>
+
+    
+    <div class="comment">
+        <h3 class="sub-title text-left" style="color: var(--bs-green)">Bình luận & Đánh giá</h2>
+        <div class="container mt-2">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <form action="" method="post">
+                        <div class="d-flex flex-row add-comment-section mt-2 mb-2">
+                            <img class="img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="50">
+                            <input type="text" class="form-control mr-3 ms-2 me-2" style="color:black" placeholder="Thêm bình luận">
+                        </div>
+                        <div class="d-flex flex-row add-comment-section mt-2 mb-2 justify-content-end">
+                            <button class="btn btn-primary" type="button">Bình luận</button>
+                        </div>
+                    </form>
+                    <div class="headings d-flex justify-content-between align-items-center mb-3">
+                        <h5>Tất cả bình luận(6)</h5>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                            <div class="icons align-items-center"> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                            <div class="icons align-items-center"> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                            <div class="icons align-items-center"> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                            <div class="icons align-items-center"> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                            <div class="icons align-items-center"> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                                <i class="fa fa-star text-warning"></i> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
