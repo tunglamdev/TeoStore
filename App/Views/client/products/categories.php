@@ -14,11 +14,21 @@
                     <a href="<?= DOCUMENT_ROOT?>/products/detail/<?= $vege['id']?>"><img class="item-img" src="<?= URL_IMG ?>/vegetables/<?= $vege['image'] ?>" alt=""></a>
                     <h5 class="item-name"><?= ucwords($vege['name']) ?></h5>
                     <div class="star-vote mt-1">
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php
+                            $rate = $data[$vege['id']]["rating"];
+                            $vote = floor($rate);
+                            $no_vote = floor(5-$rate);
+                            $half_vote = 5 - ($vote + $no_vote);
+                        ?>
+                        <?php for($i=1; $i <= $vote; $i++) : ?>
+                            <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
+                        <?php for($i=1; $i <= $half_vote; $i++) : ?>
+                            <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
+                        <?php for($i=1; $i <= $no_vote; $i++) : ?>
+                            <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
                     </div>
                     <div class="price-button">
                         <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px"><?= number_format($vege["sale_price"]==NULL ? $vege["price"] : $vege["sale_price"],0, ',','.') ?>đ</p>
