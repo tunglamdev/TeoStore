@@ -4,10 +4,12 @@ use App\Core\Controller;
     class ProductsController extends Controller{
         private $vegeModel;
         private $cateModel;
+        private $feedbackModel;
 
         function __construct(){
             $this->vegeModel = $this->model("VegetablesModel");
             $this->cateModel = $this->model("CategoriesModel");
+            $this->feedbackModel = $this->model("FeedbacksModel");
         }
 
         //Get vegtables to show on page and pagination
@@ -33,6 +35,13 @@ use App\Core\Controller;
             //Results saved
             $data["vege_to_show"] = $vegeOnPage;
             $data["page"] = $page;
+
+            //Get vote rating
+            foreach($vegeOnPage as $i => $vege){
+                $rate =  $this->feedbackModel->avg_rating($vege["id"]);
+                if($rate == NULL) $rate=0; 
+                $data[$vege["id"]]["rating"] = $rate;
+            }
 
             //Get all of categories
             $data["cate"] = $this->cateModel->all();
@@ -75,7 +84,15 @@ use App\Core\Controller;
             //Results saved
             $data["vege_to_show"] = $vegeByCate;
             $data["page"] = $page;
-            $data["id_cate"] = $idCate; 
+            $data["id_cate"] = $idCate;
+
+            //Get vote rating
+            foreach($vegeByCate as $i => $vege){
+                $rate =  $this->feedbackModel->avg_rating($vege["id"]);
+                if($rate == NULL) $rate=0; 
+                $data[$vege["id"]]["rating"] = $rate;
+            }
+
             $this->view("products/categories", $data);
         }
 
@@ -90,6 +107,13 @@ use App\Core\Controller;
                 $veges=[];
             }
             $data["vege_to_show"] = $veges;
+
+            //Get vote rating
+            foreach($veges as $i => $vege){
+                $rate =  $this->feedbackModel->avg_rating($vege["id"]);
+                if($rate == NULL) $rate=0; 
+                $data[$vege["id"]]["rating"] = $rate;
+            }
             $this->view("products/search", $data);
         }
 
@@ -108,8 +132,37 @@ use App\Core\Controller;
                 $data["vege_to_show"] = $veges1;
                 $data["vege_by_cate"] = $veges2;
             }
+
+            $feedback = $this->feedbackModel->show($id);
+            if($feedback == false){
+                $feedback=[];
+            }
+            $data["feedback"] = $feedback;
+
+            $avg = $this->feedbackModel->avg_rating($id);
+            $data["avg_rating"] = $avg;
+
+            $num_of_fb = $this->feedbackModel->count($id);
+            $data["num_of_feedback"] = $num_of_fb;
+
+            foreach($veges2 as $i => $vege){
+                $rate =  $this->feedbackModel->avg_rating($vege["id"]);
+                if($rate == NULL) $rate=0; 
+                $data[$vege["id"]]["rating"] = $rate;
+            }
+            
             $this->view("products/detail", $data);
         }
 
+        function addComment($id){
+            if(!isset($_POST["rate"])) $vote = 5;
+            else $vote = $_POST["rate"];
+
+            $cmt = $_POST["comment-content"];
+
+            $result = $this->feedbackModel->addComment($cmt, $vote, $id, $_SESSION);
+            if($result==true) $this->detail($id);
+            else echo "Add failed!";
+        }
     }
 ?>

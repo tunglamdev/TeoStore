@@ -12,11 +12,20 @@
         <div class="about-content mt-4 w-50 ps-5 pt-3">
             <h2 class="about-content-title"><?= $data['vege_to_show']['name'] ?></h2>
             <div class="star-vote mt-1 justify-content-start">
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                <?php
+                    $vote = floor($data['avg_rating']);
+                    $no_vote = floor(5-$data['avg_rating']);
+                    $half_vote = 5 - ($vote + $no_vote);
+                ?>
+                <?php for($i=1; $i <= $vote; $i++) : ?>
+                    <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                <?php endfor; ?>
+                <?php for($i=1; $i <= $half_vote; $i++) : ?>
+                    <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                <?php endfor; ?>
+                <?php for($i=1; $i <= $no_vote; $i++) : ?>
+                    <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                <?php endfor; ?>
             </div>
             <h5 class="slide-price"><?= number_format($data["vege_to_show"]["sale_price"]==NULL ? $data['vege_to_show']['price'] : $data['vege_to_show']['sale_price'],0, ',','.') ?>đ</h5>
             <p class="detail-content">Khối lượng: <b><?= $data['vege_to_show']['weight']==1000 ? '1k' : $data['vege_to_show']['weight'] ?>g</b></p>
@@ -33,99 +42,60 @@
         </div>
     </div>
 
-    
-    <div class="comment">
+    <!-- Comment and vote -->
+    <div class="comment mt-3">
         <h3 class="sub-title text-left" style="color: var(--bs-green)">Bình luận & Đánh giá</h2>
         <div class="container mt-2">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
-                    <form action="" method="post">
-                        <div class="d-flex flex-row add-comment-section mt-2 mb-2">
-                            <img class="img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="50">
-                            <input type="text" class="form-control mr-3 ms-2 me-2" style="color:black" placeholder="Thêm bình luận">
+                    <?php if(isset($_SESSION["user"])) : ?>
+                        <div>
+                            <form action="<?= DOCUMENT_ROOT ?>/products/addComment/<?= $data['vege_to_show']['id']?>" method="post">
+                                <div class="d-flex flex-row add-comment-section mt-2 mb-2">
+                                    <img class="img-responsive rounded-circle mr-2" src="<?= URL_IMG ?>/users/<?= $_SESSION['user']['avatar']?>" width="50">
+                                    <input type="text" name="comment-content" class="form-control mr-3 ms-2" style="color:black" placeholder="Thêm bình luận">
+                                </div>
+                                <div class="d-flex flex-row add-comment-section mt-2 mb-2 justify-content-between">
+                                    <div class="star-rating icons align-items-center justify-content-center">
+                                        <small class="ms-5">Bạn chấm sản phẩm bao nhiêu điểm?</small>
+                                        <input type="radio" name="rate" id="rate-5" value="5">
+                                        <label for="rate-5" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-4" value="4">
+                                        <label for="rate-4" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-3" value="3">
+                                        <label for="rate-3" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-2" value="2">
+                                        <label for="rate-2" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-1" value="1">
+                                        <label for="rate-1" class="fas fa-star"></label>
+                                    </div>
+                                    <input class="btn btn-primary" type="submit" value="Đánh giá">
+                                </div>
+                            </form>
                         </div>
-                        <div class="d-flex flex-row add-comment-section mt-2 mb-2 justify-content-end">
-                            <button class="btn btn-primary" type="button">Bình luận</button>
-                        </div>
-                    </form>
+                    <?php endif; ?>
                     <div class="headings d-flex justify-content-between align-items-center mb-3">
-                        <h5>Tất cả bình luận(6)</h5>
+                        <h5>Tất cả bình luận(<?= $data['num_of_feedback'] ?>) <?= round($data['avg_rating'], 2) ?>/5<i class="fa fa-star text-warning"></i></h5>
                     </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
-                        </div>
-                        <div class="action d-flex justify-content-between mt-2 align-items-center">
-                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                            <div class="icons align-items-center"> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
+                    <?php foreach($data["feedback"] as $i => $feedback) : ?>
+                        <div class="card p-3 mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="user d-flex flex-row align-items-center"> <img src="<?= URL_IMG ?>/users/<?= $feedback['avatar'] ?>" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary"><?= $feedback['name'] ?></small> <small class="font-weight-bold"><?= $feedback['comment'] ?></small></span> </div> <small><?= $feedback['time'] ?></small>
+                            </div>
+                            <div class="action d-flex justify-content-end mt-2 align-items-center">
+                                <!-- <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div> -->
+                                <div class="icons align-items-center">
+                                    <?php for($i=1; $i<=$feedback["vote"]; $i++) : ?>
+                                        <i class="fa fa-star text-warning"></i>
+                                    <?php endfor; ?>
+
+                                    <?php for($i=1; $i<= 5-$feedback["vote"]; $i++) : ?>
+                                        <i class="far fa-star text-warning"></i>
+                                    <?php endfor; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
-                        </div>
-                        <div class="action d-flex justify-content-between mt-2 align-items-center">
-                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                            <div class="icons align-items-center"> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
-                        </div>
-                        <div class="action d-flex justify-content-between mt-2 align-items-center">
-                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                            <div class="icons align-items-center"> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
-                        </div>
-                        <div class="action d-flex justify-content-between mt-2 align-items-center">
-                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                            <div class="icons align-items-center"> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-3 mt-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span> </div> <small>2 days ago</small>
-                        </div>
-                        <div class="action d-flex justify-content-between mt-2 align-items-center">
-                            <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                            <div class="icons align-items-center"> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                                <i class="fa fa-star text-warning"></i> 
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -144,11 +114,21 @@
                     <a href="<?= DOCUMENT_ROOT?>/products/detail/<?= $vege['id']?>"><img class="item-img" src="<?= URL_IMG ?>/vegetables/<?= $vege['image'] ?>" alt=""></a>
                     <h5 class="item-name"><?= ucwords($vege['name']) ?></h5>
                     <div class="star-vote mt-1">
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
-                        <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php
+                            $rate = $data[$vege['id']]["rating"];
+                            $vote = floor($rate);
+                            $no_vote = floor(5-$rate);
+                            $half_vote = 5 - ($vote + $no_vote);
+                        ?>
+                        <?php for($i=1; $i <= $vote; $i++) : ?>
+                            <i class="fas fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
+                        <?php for($i=1; $i <= $half_vote; $i++) : ?>
+                            <i class="fas fa-star-half-alt" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
+                        <?php for($i=1; $i <= $no_vote; $i++) : ?>
+                            <i class="far fa-star" style="color: #FFCC33; margin-left:1px; margin-right:1px; font-size: 16px;"></i>
+                        <?php endfor; ?>
                     </div>
                     <div class="price-button">
                         <p style="color: var(--green); font-weight: 700; font-size:22px; margin-bottom:0; line-height: 38px"><?= number_format($vege["sale_price"]==NULL ? $vege["price"] : $vege["sale_price"],0, ',','.') ?>đ</p>

@@ -9,6 +9,7 @@
         function __construct(){
             $this->cateModel = $this->model("CategoriesModel");
             $this->vegeModel = $this->model("VegetablesModel");
+            $this->feedbackModel = $this->model("FeedbacksModel");
         }
 
         function Index(){
@@ -37,6 +38,12 @@
  
             $data["num_of_vege"] = $numOfVege;
             $data["vege_to_show"] = $vegeOnPage;
+
+            foreach($vegeOnPage as $i => $vege){
+                $rate =  $this->feedbackModel->avg_rating($vege["id"]);
+                if($rate == NULL) $rate=0; 
+                $data[$vege["id"]]["rating"] = $rate;
+            }
  
             $this->view("home/index", $data);
         }
