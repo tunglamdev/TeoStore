@@ -168,3 +168,24 @@
     font-size:22px; 
     margin-bottom:0
 }
+
+/* ------------- Comment & star rating ------------- */
+.star-rating > input{
+    display: none;
+}
+
+.star-rating label{
+    color: #666;
+    float: right;
+    padding: 2px;
+}
+.star-rating input:not(:checked) ~ label:hover,
+.star-rating input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+    cursor:pointer;
+}
+
+.star-rating input:checked ~ label{
+    color: #fd4;
+    cursor:pointer;
+}
