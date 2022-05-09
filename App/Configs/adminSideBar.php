@@ -49,6 +49,13 @@
                 "link" => DOCUMENT_ROOT."/admin/sale"
             ],
 
+            "Bình luận & Đánh giá" => [
+                "title" => "Bình luận & Đánh giá",
+                "name" => "feedbacks",
+                "icon" => "nav-icon far fa-comment",
+                "link" => DOCUMENT_ROOT."/admin/feedback"
+            ],
+
             "Đăng xuất" => [
                 "title" => "Đăng xuất",
                 "name" => "logout",
