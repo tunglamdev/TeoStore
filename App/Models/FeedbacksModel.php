@@ -4,6 +4,21 @@
 
     class FeedbacksModel extends Database{
 
+        function showAll(){
+            $stmt = $this->conn->prepare("SELECT U.name as user, V.name as vege, F.id, F.comment, F.vote, F.time
+                                            FROM feedbacks F JOIN users U ON F.id_user=U.id
+                                                            JOIN vegetables V ON F.id_veg=V.id");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if($result->num_rows >0){
+                return $result->fetch_all(MYSQLI_ASSOC);
+            }
+            else{
+                return false;
+            }
+        }
+
         function show($id){
             $vegeID = $id;
             $stmt = $this->conn->prepare("SELECT F.comment, F.vote, F.time, U.name, U.avatar
@@ -69,9 +84,9 @@
         }
 
         // Admin
-        function deleteCate($data){
-            $id = $data["cateId"];
-            $stmt = $this->conn->prepare("DELETE FROM veg_types WHERE id=?");
+        function deleteCmt($data){
+            $id = $data["cmtId"];
+            $stmt = $this->conn->prepare("DELETE FROM feedbacks WHERE id=?");
             $stmt->bind_param("i",$id);
             $stmt->execute();
             $result = $stmt->affected_rows;
