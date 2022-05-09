@@ -161,7 +161,7 @@ use App\Core\Controller;
             $cmt = $_POST["comment-content"];
 
             $result = $this->feedbackModel->addComment($cmt, $vote, $id, $_SESSION);
-            if($result==true) $this->detail($id);
+            if($result==true) header("Location: ".DOCUMENT_ROOT."/products/detail/".$id);
             else echo "Add failed!";
         }
     }
