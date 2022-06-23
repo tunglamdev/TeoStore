@@ -60,8 +60,9 @@
                 $check = true;
                 $result1 = $this->orderModel->book($_GET["userId"]);
                 $result2 = $this->cartModel->getById($_GET["userId"]);
+                //var_dump($result2);
                 foreach ($result2 as $i => $item){
-                    $data["id_order"] = $result1["max(id)"];
+                    $data["id_order"] = $result1["orderId"];
                     $data["id_vege"] = $item["id_veg"];
                     $data["amount"] = $item["amount"];
                     $result3 = $this->vegeModel->getVegeById($data["id_vege"]);
